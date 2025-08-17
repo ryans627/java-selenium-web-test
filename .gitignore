@@ -33,3 +33,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### WebDrivers ###
+chromedriver
+msedgedriver
+geckodriver
+*.exe
