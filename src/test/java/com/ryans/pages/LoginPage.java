@@ -21,9 +21,13 @@ public class LoginPage extends BasePage {
         driver.findElement(passwordBy).clear();
     }
 
-    public String login(String username, String password) throws InterruptedException {
+    public void enterCredentials(String username, String password) {
+        clearInputs();
         driver.findElement(usernameBy).sendKeys(username);
         driver.findElement(passwordBy).sendKeys(password);
+    }
+
+    public String clickLoginButton() {
         driver.findElement(loginBtnBy).click();
         return getNotificationMessage();
     }

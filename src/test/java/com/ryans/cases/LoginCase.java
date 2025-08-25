@@ -42,7 +42,8 @@ public class LoginCase {
     // 使用数据驱动
     // 采用POM，测试用例只写业务方法
     public void testLogin(String username, String password, String expectedMsg) throws InterruptedException {
-        String actualMsg = loginPage.login(username, password);
+        loginPage.enterCredentials(username, password);
+        String actualMsg = loginPage.clickLoginButton();
         // 断言
         Assert.assertEquals(actualMsg, expectedMsg);
     }
