@@ -27,7 +27,7 @@ public class LoginCase {
 
     // 定义数据提供者
     @DataProvider(name = "loginData")
-    public Object[][] provideInvalidLoginData() {
+    public Object[][] provideLoginData() {
         return new Object[][]{
                 {"salewond", "123456", "登录成功"},
                 {"aaaa1", "123456", "登录帐号不存在"},
