@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
-    private String loginPageURL = "http://116.62.63.211/shop/user/loginInfo.html";
     // 账号的xpath
     private By usernameBy = By.xpath("//input[@placeholder='请输入用户名/手机/邮箱']");
     // 密码的xpath
@@ -17,11 +16,12 @@ public class LoginPage extends BasePage {
     }
 
 
-    public void navigateToLoginPage() {
-        driver.get(loginPageURL);
+    public void clearInputs() {
+        driver.findElement(usernameBy).clear();
+        driver.findElement(passwordBy).clear();
     }
 
-    public String loginSuccess(String username, String password) throws InterruptedException {
+    public String login(String username, String password) throws InterruptedException {
         driver.findElement(usernameBy).sendKeys(username);
         driver.findElement(passwordBy).sendKeys(password);
         driver.findElement(loginBtnBy).click();
